@@ -33,6 +33,7 @@ class App extends React.Component {
         <HeaderContainer />
         <Navbar />
         <div className="app-wrapper-content">
+        <Route path="/user" render={() => ( <UsersContainer/> )}/>
         <React.Suspense fallback={<div>Loading...</div>}>
           <Route
             path="/dialogs"
@@ -44,7 +45,6 @@ class App extends React.Component {
               <ProfileContainer />
             )}
           />
-          <Route path="/user" render={() => ( <UsersContainer/> )}/>
           <Route path="/login" render={() => ( <Login/> )}/>
           <Route path="/news" component={News} />
           <Route path="/musik" component={Musik} />
