@@ -37,7 +37,26 @@ export const profileAPI = {
 
   updateStatus(status){// status - new text for status
     return  instance.put(`profile/status/`, {status: status});//methods put and post can pass json-object as parametr--2
-  }
+  },
+  // savePhoto(photoFile){
+  //   const formData = new FormData();
+  //   formData.append('image', photoFile);
+  //   return  instance.put(`profile/photo/`, formData, {
+  //     hesders: {
+  //       'Content-Type': 'multipart/form-data'
+  //     }
+  //   });
+  // }
+  savePhoto(photoFile) {
+    const formData = new FormData();
+    formData.append("image", photoFile);
+
+    return instance.put(`profile/photo`, formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    });
+}
 }
 
 export const authAPI = {
