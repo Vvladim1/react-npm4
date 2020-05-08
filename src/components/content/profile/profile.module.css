@@ -1,6 +1,8 @@
 .profile {
     padding: 10px;
-    display: flex;
+  }
+  .ava {
+    position: relative;
   }
   .ava img {
     width: 30%;
@@ -14,4 +16,21 @@
   }
   .nameBlock p {
     color: yellow;
+  }
+  label {
+    display: none;
+    position: absolute;
+    border-radius: 3px;
+  }
+  .ava:hover label{
+    display: block;
+    position: absolute;
+    top: 130px;
+    left: 20px;
+  }
+  label input {
+    width: 115px;
+  }
+  .contacts {
+    padding-left: 10px;
   }
