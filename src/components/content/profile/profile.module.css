@@ -3,12 +3,13 @@
   }
   .ava {
     position: relative;
+    width: 100px;
   }
   .ava img {
     width: 30%;
   }
   .ava .photo {
-    width: 150px;
+    width: 100%;
     border-radius: 50%;
   }
   .nameBlock h3 {
@@ -25,11 +26,11 @@
   .ava:hover label{
     display: block;
     position: absolute;
-    top: 130px;
-    left: 20px;
+    top: 80%;
+    left: 0;
   }
   label input {
-    width: 115px;
+    width: 100%;
   }
   .contacts {
     padding-left: 10px;

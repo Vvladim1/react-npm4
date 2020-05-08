@@ -56,7 +56,11 @@ export const profileAPI = {
             'Content-Type': 'multipart/form-data'
         }
     });
-}
+  },
+
+  saveProfile(profile){
+    return  instance.put(`profile`, profile );//methods put and post can pass json-object as parametr--2
+    }
 }
 
 export const authAPI = {

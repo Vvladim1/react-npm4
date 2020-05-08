@@ -7,6 +7,7 @@ const Content = props => {
     <div>
       <Profile profile={props.profile}
                isOwner={props.isOwner} 
+               saveProfile={props.saveProfile}
                savePhoto={props.savePhoto}
                status={props.status} 
                updateStatus={props.updateStatus} />
