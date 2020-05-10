@@ -1,2 +1,0 @@
-(this["webpackJsonpnpm-react"]=this["webpackJsonpnpm-react"]||[]).push([[9],{300:function(t,n,e){"use strict";e.r(n);var s=e(0),a=e.n(s);n.default=function(){return a.a.createElement("div",null,"settings")}}}]);
-//# sourceMappingURL=9.7b0d73d0.chunk.js.map
