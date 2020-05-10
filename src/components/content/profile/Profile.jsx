@@ -20,8 +20,10 @@ const Profile = ({ profile, status, updateStatus, isOwner, savePhoto, saveProfil
   };
 
   const onSubmit = (formData) => {
-    saveProfile(formData);
-    setEditMode(false);
+    const Promise = saveProfile(formData)
+    Promise.then(
+      () => {setEditMode(false);}
+    );
   }
 
   return (
@@ -76,7 +78,7 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
     <b>About me: </b> {profile.aboutMe}
   </div>
   <div>
-    <b>Contacts: </b>{""}
+    <b>Contacts: </b>
     {Object.keys(profile.contacts).map((key) => {
       return (
         <Contact

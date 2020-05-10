@@ -38,15 +38,7 @@ export const profileAPI = {
   updateStatus(status){// status - new text for status
     return  instance.put(`profile/status/`, {status: status});//methods put and post can pass json-object as parametr--2
   },
-  // savePhoto(photoFile){
-  //   const formData = new FormData();
-  //   formData.append('image', photoFile);
-  //   return  instance.put(`profile/photo/`, formData, {
-  //     hesders: {
-  //       'Content-Type': 'multipart/form-data'
-  //     }
-  //   });
-  // }
+
   savePhoto(photoFile) {
     const formData = new FormData();
     formData.append("image", photoFile);
@@ -68,11 +60,19 @@ export const authAPI = {
         return instance.get(`auth/me`);
   },
 
-  login(email, password, rememberMe = false){
-    return instance.post(`auth/login`, {email, password, rememberMe});//methods put and post can pass json-object as parametr--2
+  login(email, password, rememberMe=false, captcha=null){
+    return instance.post(`auth/login`, {email, password, rememberMe, captcha});//methods put and post can pass json-object as parametr--2
   },
   logout(){
     return instance.delete(`auth/login`);}
+}
+
+export const securityAPI = {
+  getCaptchaUrl(){
+        return instance.get(`security/get-captcha-url`);
+  },
+
+
 }
 
 
