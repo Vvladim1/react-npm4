@@ -37,17 +37,11 @@ class ProfileContainer extends React.Component {
                   status={this.props.status}
                   updateStatus={this.props.updateStatus}
                   savePhoto={this.props.savePhoto}
-                  // saveProfile={this.props.saveProfile}
                   />
       </div>
     );
   }
 }
-
-
-// let WithAuthRedirectComponent = WithAuthRedirect(ProfileContainer);
-
-
 
 let mapStateToProps = (state) => ({
   profile: state.profilePage.profile,
@@ -56,9 +50,6 @@ let mapStateToProps = (state) => ({
   isAuth: state.auth.isAuth
 });
 
-// let WithUrlDataContainerComponent = withRouter(WithAuthRedirectComponent)
-
-// export default connect(mapStateToProps, {getUserProfileThunk}) (WithUrlDataContainerComponent);
 export default compose(
   connect(mapStateToProps, {getUserProfileThunk, getStatusThunk, updateStatus, savePhoto, saveProfile}),
   withRouter,

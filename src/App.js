@@ -1,14 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import Navbar from "./components/nav/Navbar";
-import { Route, withRouter } from "react-router-dom";
+import { Route, withRouter, HashRouter, Switch, Redirect } from "react-router-dom";
 import UsersContainer from "./components/users/usersContainer";
 import HeaderContainer from "./components/header/headerContainer";
-import { connect } from "react-redux";
+import { connect, Provider } from "react-redux";
 import { initializeApp } from './components/redux/app-reducer'
 import { compose } from "redux";
+import store from './components/redux/redux-store'
 import Preloader from "./components/common/preload/preload";
-// import ProfileContainer from "./components/content/profileContainer";
 const ProfileContainer = React.lazy(() => import('./components/content/profileContainer'));
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 const Musik = React.lazy(() => import('./components/musik/musik'));
@@ -17,11 +17,12 @@ const Settings = React.lazy(() => import('./components/settings/settings'));
 const Login = React.lazy(() => import('./components/login/login'));
 
 
-class App extends React.Component {
-  // debugger;
+class App extends Component {
+
   componentDidMount() {
     this.props.initializeApp();
     }
+
   render(){
     if(!this.props.initialized) {
     return (
@@ -34,7 +35,12 @@ class App extends React.Component {
         <Navbar />
         <div className="app-wrapper-content">
         <Route path="/user" render={() => ( <UsersContainer/> )}/>
-        <React.Suspense fallback={<div>Loading...</div>}>
+        <React.Suspense fallback={<div>Please wait! Loading...</div>}>
+          <Switch>
+          <Route exact
+            path="/"
+            render={() => <Redirect to={'/content'} />}
+          />
           <Route
             path="/dialogs"
             render={() => <DialogsContainer />}
@@ -49,6 +55,12 @@ class App extends React.Component {
           <Route path="/news" component={News} />
           <Route path="/musik" component={Musik} />
           <Route path="/settings" component={Settings} />
+          <Route path="*"
+            render={() => (
+              <div>404 NOT FOUND</div>
+            )}
+          />
+          </Switch>
           </React.Suspense>
         </div>
     </div>
@@ -59,6 +71,16 @@ class App extends React.Component {
 const mapStateToProps = (state) => ({
   initialized: state.app.initialized
 });
-export default compose(
+let AppContainer = compose(
   withRouter,
   connect(mapStateToProps, {initializeApp}))(App);
+
+const SamuraiJSApp = (props) => {
+  return <HashRouter>
+      <Provider store={store}>
+          <AppContainer />
+        </Provider>
+  </HashRouter>
+}
+
+export default SamuraiJSApp;
