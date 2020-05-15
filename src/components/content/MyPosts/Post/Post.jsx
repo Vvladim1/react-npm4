@@ -1,11 +1,13 @@
 import React from "react";
 import s from "./Post.module.css";
+import userpng from '../../../../assets/images/user.png'
 
 const Post = props => {
+  debugger;
   return (
     <div className={s.item}>
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRAul_QJonV108RRTLmYREMKl3NpvBHMqWCTq_vcEhFXgm5s9r&s"
+        src={userpng}
         alt="face"
       />
       {props.message}

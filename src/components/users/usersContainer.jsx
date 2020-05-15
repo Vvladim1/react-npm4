@@ -11,8 +11,6 @@ import { getUsers, getPageSize, getTotalUsersCount, getCurrentPage, getIsFetchin
 import { connect } from "react-redux";
 import Users from './users'
 import Preloader from "../common/preload/preload";
-import {userAPI} from '../../api/api'
-import { WithAuthRedirect } from "../../hoc/authRedirect";
 import { compose } from "redux";
 
 class UsersContainer extends React.Component {

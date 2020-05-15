@@ -1,14 +1,12 @@
 import React from "react";
 import s from './formsControls.module.css';
-import { Field } from "redux-form";
+// import {required} from "../../../utils/validators/validators";
+import {Field} from "redux-form";
 
-
-
-const FormControl = ({input, meta: {touched, error}, children, ...props}) => {
-    // debugger;
+const FormControl = ({input, meta: {touched, error}, children}) => {
     const hasError = touched && error;
     return (
-        <div className={s.formControl + ' ' + (hasError ? s.error : '')}>
+        <div className={s.formControl + " " + (hasError ? s.error : "")}>
             <div>
                 {children}
             </div>
@@ -17,24 +15,22 @@ const FormControl = ({input, meta: {touched, error}, children, ...props}) => {
     )
 }
 
-
 export const Textarea = (props) => {
-    const {input, meta, children, ...restprops} = props;
-    return <FormControl {...props}><textarea {...input} {...restprops}/></FormControl>
+    const {input, meta, child, ...restProps} = props;
+    return <FormControl {...props}><textarea {...input} {...restProps} /></FormControl>
 }
-        
 
 export const Input = (props) => {
-    const {input, meta, child, ...restprops} = props;
-    return <FormControl {...props}><input {...input} {...restprops} /></FormControl>
-
+    const {input, meta, child, ...restProps} = props;
+    return <FormControl {...props}><input {...input} {...restProps} /></FormControl>
 }
 
-export const createField = (placeholder, name, validators, component, props={}, text='') => <div><Field 
-            placeholder={placeholder}
-            name={name} 
-            validate={validators} 
-            component={component} 
-            {...props} 
-            text /></div>
-
+export const createField = (placeholder, name, validators, component, props = {}, text = "") => (
+    <div>
+        <Field placeholder={placeholder} name={name}
+               validate={validators}
+               component={component}
+               {...props}
+        /> {text}
+    </div>
+)

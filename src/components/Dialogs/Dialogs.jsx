@@ -9,7 +9,6 @@ import { required, maxLengthCreator } from "../../utils/validators/validators";
 
 
 const Dialogs = props => {
-  // debugger;
 
   let dialogsElement = props.state.dialogs.map(data => (
     <DialogItem name={data.name} id={data.id} key={data.id} />
@@ -18,8 +17,7 @@ const Dialogs = props => {
     <Message message={datas.message} key={datas.id} />
   ));
 
-  let newMessageBody = props.state.newMessageBody;
-
+  // let newMessageBody = props.state.newMessageBody;
 
   let addNewMessage = (values) => {
     props.onSendMessageClick(values.newMessageBody);
@@ -59,6 +57,5 @@ const AddMessageForm = (props) => {
 }
 
 const AddMessageFormRedux  = reduxForm({form: 'dialogAddMessageForm'})(AddMessageForm);
-
 
 export default Dialogs;

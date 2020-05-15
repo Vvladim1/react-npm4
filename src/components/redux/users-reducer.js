@@ -27,24 +27,11 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         users: updateObjectInArrey(state.users, action.userId, 'id',{followed: true})
-        // users: state.users.map( u => {
-        //   if(u.id === action.userId) {
-        //     return {...u, followed: true}
-        //   }
-        //   return u;
-        // } )
       }      
     case UNFOLLOW:
       return {
         ...state,
         users: updateObjectInArrey(state.users, action.userId, 'id',{followed: false})
-
-        // users: state.users.map( u => {
-        //   if(u.id === action.userId) {
-        //     return {...u, followed: false}
-        //   }
-        //   return u;
-        // } )
       }
     case SET_USERS: {
       return {...state, users: action.users};
@@ -63,7 +50,7 @@ const userReducer = (state = initialState, action) => {
         ...state, 
         followingInProgress: action.isFetching 
         ? [...state.followingInProgress, action.userId]
-        : state.followingInProgress.filter(id => id != action.userId)};
+        : state.followingInProgress.filter(id => id !== action.userId)};
     }
     default:
       return state;

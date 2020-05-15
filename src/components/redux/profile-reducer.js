@@ -37,7 +37,7 @@ const profileReducer = (state = initialState, action) => {
       case DELETE_POST:
       return {
         ...state,
-        posts: state.posts.filter(p => p.id != action.postId)
+        posts: state.posts.filter(p => p.id !== action.postId)
       }
     case SET_STATUS:
       return {
@@ -105,10 +105,10 @@ export const saveProfile = (profile) => {
       if(response.data.resultCode === 0){
       dispatch(getUserProfileThunk(userId));
     }else{
-      {
+      
         dispatch(stopSubmit('edit-profile',  {'_error': response.data.messages[0]} ));
         return Promise.reject(response.data.messages[0]);
-      }
+      
     }
   }
 }

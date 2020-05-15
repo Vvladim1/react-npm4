@@ -1,10 +1,11 @@
 .item {
   margin-bottom: 5px;
-  color: rgb(22, 3, 8);
+  color:#006363;
+  font-weight: 500;
 }
 
 .item img {
   width: 5%;
-  border-radius: 40%;
+  border-radius: 50%;
   padding-right: 5px;
 }

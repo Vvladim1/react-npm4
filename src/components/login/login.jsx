@@ -1,7 +1,7 @@
 import React from 'react';
-import { reduxForm, Field } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import { Input, createField } from '../common/formsControls/formsControls';
-import { maxLengthCreator, required } from '../../utils/validators/validators';
+import {  required } from '../../utils/validators/validators';
 import { connect } from 'react-redux';
 import {login} from '../redux/auth-reducer'
 import { Redirect } from 'react-router-dom';
@@ -14,7 +14,7 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
             {createField('Password', 'password', [required], Input, {type: 'password'})}
             {createField(null, 'rememberMe', [], Input, {type: 'checkbox'}, 'remember me')}
 
-            {captchaUrl && <img src={captchaUrl} /> }
+            {captchaUrl && <img src={captchaUrl} alt=''/> }
             {captchaUrl && createField('symbols from image', 'captcha', [required], Input, {})}
 
             {error && <div  className={s.formSummeryError}>

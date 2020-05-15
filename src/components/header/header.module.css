@@ -1,17 +1,37 @@
 .header {
   grid-area: h;
-  background-color: green;
+  background-color: #102020;
   padding: 10px;
-  
+}
+.logoblock {
+  float: left;
+  color: #a7b5b7;
+  position: relative;
+}
+.logoblock h1 {
+  margin: 0;
+}
+.logoblock h4 {
+  position: absolute;
+  margin: 0;
 }
 
 .loginBlock {
   float: right;
   padding: 10px;
   color: white;
-
 }
 .loginBlock a {
   color: white;
   text-decoration: none;
+}
+.site_title {
+  display: none;
+}
+.header:hover .site_title {
+  display: block;
+  color: #a7b5b7;
+  opacity: 50%;
+  bottom: 4px;
+  right: -70px;
 }

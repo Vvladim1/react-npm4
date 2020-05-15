@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./users.module.css";
-import userPhoto from "../../assets/images/userImg.jpg";
-import { NavLink } from "react-router-dom";
+// import styles from "./users.module.css";
+// import userPhoto from "../../assets/images/userImg.jpg";
+// import { NavLink } from "react-router-dom";
 // import * as axios from "axios";
-import { userAPI } from "../../api/api";
+// import { userAPI } from "../../api/api";
 import Paginator from "../common/paginator/paginator";
 import User from "./user";
 

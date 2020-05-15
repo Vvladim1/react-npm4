@@ -1,12 +1,23 @@
 .nav {
   grid-area: n;
-  background-color: rgb(240, 176, 58);
+  background-color: #037c87;
   padding: 20px;
 }
 .item a {
+  display: block;
   color: white;
   text-decoration: none;
+  font-weight: 600;
 }
+.item a:hover {
+  background-color: #a7b5b7;
+}
+
 .item a.activeLink {
-  color: rgb(68, 10, 10);
+  color: #037c87;
+  background-color: #a7b5b7;
+}
+.nav_list:hover a.activeLink{
+  color: white;
+  background-color: #037c87;
 }

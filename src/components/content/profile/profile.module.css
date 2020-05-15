@@ -10,7 +10,7 @@
   }
   .ava .photo {
     width: 100%;
-    border-radius: 50%;
+    /* border-radius: 50%; */
   }
   .nameBlock h3 {
     color: yellow;
@@ -29,9 +29,9 @@
     top: 80%;
     left: 0;
   }
-  label input {
-    width: 100%;
-  }
+  /* label input { */
+    /* width: 100%; */
+  /* } */
   .contacts {
     padding-left: 10px;
   }

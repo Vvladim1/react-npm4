@@ -25,7 +25,7 @@ class ProfileContainer extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    if ( this.props.match.params.userId != prevProps.match.params.userId ){
+    if ( this.props.match.params.userId !== prevProps.match.params.userId ){
       this.refreshProfile();
     }
   }
@@ -53,5 +53,5 @@ let mapStateToProps = (state) => ({
 export default compose(
   connect(mapStateToProps, {getUserProfileThunk, getStatusThunk, updateStatus, savePhoto, saveProfile}),
   withRouter,
-  // WithAuthRedirect
+  WithAuthRedirect
 )(ProfileContainer)
