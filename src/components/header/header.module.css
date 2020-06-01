@@ -21,6 +21,11 @@
   padding: 10px;
   color: white;
 }
+
+.logoblock a {
+  color: white;
+  text-decoration: none;
+}
 .loginBlock a {
   color: white;
   text-decoration: none;
@@ -35,3 +40,5 @@
   bottom: 4px;
   right: -70px;
 }
+
+

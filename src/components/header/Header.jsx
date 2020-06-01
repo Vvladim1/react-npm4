@@ -10,12 +10,14 @@ const Header = (props) => {
         width="5%"
         alt='sea'
       /> */}
-      <NavLink to="/content" >
+      
       <div className={s.logoblock}>
+      <NavLink to="/content" >
         <h1>REACT</h1>
+      </NavLink>
         <h4 className={s.site_title}>social net</h4>
       </div>
-      </NavLink>
+      
       
 
 

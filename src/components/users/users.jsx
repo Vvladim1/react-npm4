@@ -1,5 +1,5 @@
 import React from "react";
-// import styles from "./users.module.css";
+import styles from "./users.module.css";
 // import userPhoto from "../../assets/images/userImg.jpg";
 // import { NavLink } from "react-router-dom";
 // import * as axios from "axios";
@@ -26,6 +26,10 @@ const Users = ({totalUsersCount, pageSize, currentPage, onPageChanged, users, ..
               follow={props.follow}
               unfollow={props.unfollow} />
       ))}
+      <Paginator totalItemsCount={totalUsersCount} 
+                 pageSize={pageSize}
+                 currentPage={currentPage} 
+                 onPageChanged={onPageChanged} />
     </div>
   );
 };
